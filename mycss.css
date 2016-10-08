@@ -1,0 +1,28 @@
+body {
+
+}
+table {
+  background-color: default;
+  border: 3px solid powderblue;
+  border-color: currentColor;
+  border-radius: 10px;
+  width: 30%;
+  height: 70%;
+}
+
+#css_table {
+  display: table;
+}
+
+.css_trow {
+  display: table-row;
+}
+
+.css_tcol {
+  display: table-cell;
+  padding: 10px;
+}
+
+/*td {
+  padding: 20px;
+}*/
