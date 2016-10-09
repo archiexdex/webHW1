@@ -1,26 +1,33 @@
 body {
 
 }
-table {
-  background-color: default;
-  border: 3px solid powderblue;
-  border-color: currentColor;
-  border-radius: 10px;
-  width: 30%;
-  height: 70%;
-}
 
 #css_table {
-  display: table;
+  /*display: table;*/
+  /*border-collapse: collapse;*/
+}
+
+.header {
+  
 }
 
 .css_trow {
-  display: table-row;
+  /*display: table-row;*/
+  /*height: 15%;*/
+  margin: 5px;
 }
 
 .css_tcol {
-  display: table-cell;
+  display: inline-block;
   padding: 10px;
+  margin: 5px;
+  border: 2px solid powderblack;
+  border-style: outset;
+  border-radius: 20%;
+  width: 30px;
+  height: 30px;
+  background-color: #dddddd;
+  vertical-align: middle;
 }
 
 /*td {
