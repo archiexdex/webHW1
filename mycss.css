@@ -2,14 +2,52 @@ body {
 
 }
 
-#css_table {
-  /*display: table;*/
+.css_table {
+  /*display: block;*/
   /*border-collapse: collapse;*/
+  border: 5px solid red;
+  border-radius: 10px;
+  width: 430px;
+
+
 }
 
 .header {
-  
+  text-align: center;
+
 }
+
+.result {
+  text-align: right;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+.show_table {
+  margin: 5px ;
+  padding: 10px;
+}
+
+.show_row {
+
+}
+
+.show_cell {
+  height: 30px;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+.show_header {
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.show_result {
+  display: inline-block;
+}
+
 
 .css_trow {
   /*display: table-row;*/
@@ -19,17 +57,14 @@ body {
 
 .css_tcol {
   display: inline-block;
+  vertical-align: middle;
   padding: 10px;
-  margin: 5px;
+  margin: 5px ;
   border: 2px solid powderblack;
   border-style: outset;
   border-radius: 20%;
   width: 30px;
   height: 30px;
   background-color: #dddddd;
-  vertical-align: middle;
+  text-align: center;
 }
-
-/*td {
-  padding: 20px;
-}*/
