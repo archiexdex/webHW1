@@ -21,6 +21,7 @@ body {
   text-align: right;
   font-family: monospace;
   font-size: 30px;
+  padding-right: 10px;
 }
 
 .show_table {
