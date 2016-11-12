@@ -12,7 +12,7 @@ function onClick(v) {
 
 
 
-    if ( 0 <= tmp && tmp <= 9) {
+    if ( 0 <= tmp && tmp <= 9 || ("A" <= tmp && tmp <= "F") ) {
         if ( result == 0 )
             document.getElementById( "now" ).innerHTML = tmp;
         else {
@@ -40,6 +40,19 @@ function goBack(v) {
   }
 }
 
+
+
+function clear(v) {
+    let tmp = v.path[0].id;
+    document.getElementById( "now" ).innerHTML = 0;
+
+    if ( tmp == "clearAll" ) {
+        document.getElementById( "result" ).innerHTML = "";
+    }
+
+}
+
+
 function negate() {
     let result = document.getElementById( "now" ).innerHTML;
     document.getElementById( "now" ).innerHTML = -result;
@@ -50,10 +63,10 @@ function start() {
 
 
     document.getElementById( "Mod" ).addEventListener("click", onClick);
-    document.getElementById( "CE" ).addEventListener("click", onClick);
-    document.getElementById( "C" ).addEventListener("click", onClick);
+    document.getElementById( "clear" ).addEventListener("click", clear);
+    document.getElementById( "clearAll" ).addEventListener("click", clear);
     document.getElementById( "back" ).addEventListener("click", goBack);
-    document.getElementById( "%" ).addEventListener("click", onClick);
+    document.getElementById( "/" ).addEventListener("click", onClick);
 
     document.getElementById( "A" ).addEventListener("click", onClick);
     document.getElementById( "B" ).addEventListener("click", onClick);
