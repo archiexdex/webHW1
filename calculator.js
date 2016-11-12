@@ -7,21 +7,18 @@ window.addEventListener( "load", start, false );
 
 function onClick(v) {
     let tmp = v.path[0].id;
-    var result = document.getElementById( "result" ).innerHTML;
+    let result = document.getElementById( "now" ).innerHTML;
     console.log(tmp);
 
 
 
-
-    if ( result == 0 ) {
-      console.log("!!");
-      document.getElementById( "result" ).innerHTML = tmp;
+    if ( 0 <= tmp && tmp <= 9) {
+        if ( result == 0 )
+            document.getElementById( "now" ).innerHTML = tmp;
+        else {
+            document.getElementById( "now" ).innerHTML += tmp;
+        }
     }
-    else {
-      console.log("@@");
-      document.getElementById( "result" ).innerHTML += tmp;
-    }
-
 }
 
 function answer() {
@@ -29,7 +26,7 @@ function answer() {
 
 function goBack(v) {
   let tmp = v.path[0].id;
-  var result = document.getElementById( "now" ).innerHTML;
+  let result = document.getElementById( "now" ).innerHTML;
   console.log(tmp);
 
   if ( tmp == "back" ){
@@ -41,6 +38,11 @@ function goBack(v) {
       document.getElementById( "now" ).innerHTML = next;
       return;
   }
+}
+
+function negate() {
+    let result = document.getElementById( "now" ).innerHTML;
+    document.getElementById( "now" ).innerHTML = -result;
 }
 
 function start() {
@@ -74,7 +76,7 @@ function start() {
     document.getElementById( "3" ).addEventListener("click", onClick);
     document.getElementById( "+" ).addEventListener("click", onClick);
 
-    document.getElementById( "bar" ).addEventListener("click", onClick);
+    document.getElementById( "bar" ).addEventListener("click", negate);
     document.getElementById( "0" ).addEventListener("click", onClick);
     document.getElementById( "=" ).addEventListener("click", answer);
 }
