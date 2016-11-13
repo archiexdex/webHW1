@@ -24,10 +24,12 @@ function onClick(v) {
 function answer() {
     let result = document.getElementById( "result" ).innerHTML;
     let now = document.getElementById( "now" ).innerHTML;
-
+    now = parseInt(now,mode);
     result = eval( result + now );
+    result = Math.trunc(result);
+    result = result.toString(mode);
     console.log(result);
-    document.getElementById( "now" ).innerHTML = Math.trunc(result) ;
+    document.getElementById( "now" ).innerHTML = result.toUpperCase() ;
     document.getElementById( "result" ).innerHTML = "";
     reload();
 }
