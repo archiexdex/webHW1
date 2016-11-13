@@ -61,6 +61,27 @@ function operator(v) {
 function change(v) {
     let tmp = v.path[0].id;
     let ptr = tmp.substr(0,3);
+    let now = document.getElementById( "now" ).innerHTML;
+    let base10 = parseInt( now, mode );
+
+    if ( ptr == "hex"){
+        mode = 16;
+        document.getElementById( "now" ).innerHTML = base10.toString(mode).toUpperCase();
+    }
+    else if ( ptr == "dec" ) {
+        mode = 10;
+        document.getElementById( "now" ).innerHTML = base10;
+    }
+    else if ( ptr == "oct" ) {
+        mode = 8;
+        document.getElementById( "now" ).innerHTML = base10.toString(mode);
+    }
+    else if( ptr == "bin" ) {
+        mode = 2;
+        document.getElementById( "now" ).innerHTML = base10.toString(mode);
+    }
+    console.log("change mode " + mode);
+
     document.getElementById( "hexHeader" ).style.color = "black";
     document.getElementById( "decHeader" ).style.color = "black";
     document.getElementById( "octHeader" ).style.color = "black";
@@ -74,15 +95,9 @@ function change(v) {
     document.getElementById( tmp ).style.color = "#33f3ff";
     document.getElementById( ptr+"Now" ).style.color = "#33f3ff";
 
-    if ( ptr == "hex")
-        mode = 16;
-    else if ( ptr == "dec" )
-        mode = 10;
-    else if ( ptr == "oct" )
-        mode = 8;
-    else if( ptr == "bin" )
-        mode = 2;
-    console.log("change mode " + mode);
+
+
+
 }
 
 
