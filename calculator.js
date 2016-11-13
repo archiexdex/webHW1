@@ -27,7 +27,7 @@ function answer() {
 
     result = eval( result + now );
     console.log(result);
-    document.getElementById( "now" ).innerHTML = Math.floor(result) ;
+    document.getElementById( "now" ).innerHTML = Math.trunc(result) ;
     document.getElementById( "result" ).innerHTML = "";
     reload();
 }
@@ -95,13 +95,10 @@ function change(v) {
     document.getElementById( tmp ).style.color = "#33f3ff";
     document.getElementById( ptr+"Now" ).style.color = "#33f3ff";
 
-
+    reable();
 
 
 }
-
-
-
 
 function negate() {
     let result = document.getElementById( "now" ).innerHTML;
@@ -132,8 +129,9 @@ function goBack(v) {
         document.getElementById( "now" ).innerHTML = next;
     }
     reload();
-
 }
+
+
 
 function clear(v) {
     let tmp = v.path[0].id;
@@ -143,6 +141,162 @@ function clear(v) {
         document.getElementById( "result" ).innerHTML = "";
     }
     reload()
+}
+
+function recolor() {
+    switch (mode) {
+      case 16:
+      document.getElementById( "0" ).style.color = "black";
+      document.getElementById( "1" ).style.color = "black";
+      document.getElementById( "2" ).style.color = "black";
+      document.getElementById( "3" ).style.color = "black";
+      document.getElementById( "4" ).style.color = "black";
+      document.getElementById( "5" ).style.color = "black";
+      document.getElementById( "6" ).style.color = "black";
+      document.getElementById( "7" ).style.color = "black";
+      document.getElementById( "8" ).style.color = "black";
+      document.getElementById( "9" ).style.color = "black";
+      document.getElementById( "A" ).style.color = "black";
+      document.getElementById( "B" ).style.color = "black";
+      document.getElementById( "C" ).style.color = "black";
+      document.getElementById( "D" ).style.color = "black";
+      document.getElementById( "E" ).style.color = "black";
+      document.getElementById( "F" ).style.color = "black";
+        break;
+      case 10:
+        document.getElementById( "0" ).style.color = "black";
+        document.getElementById( "1" ).style.color = "black";
+        document.getElementById( "2" ).style.color = "black";
+        document.getElementById( "3" ).style.color = "black";
+        document.getElementById( "4" ).style.color = "black";
+        document.getElementById( "5" ).style.color = "black";
+        document.getElementById( "6" ).style.color = "black";
+        document.getElementById( "7" ).style.color = "black";
+        document.getElementById( "8" ).style.color = "black";
+        document.getElementById( "9" ).style.color = "black";
+        document.getElementById( "A" ).style.color = "darkgray";
+        document.getElementById( "B" ).style.color = "darkgray";
+        document.getElementById( "C" ).style.color = "darkgray";
+        document.getElementById( "D" ).style.color = "darkgray";
+        document.getElementById( "E" ).style.color = "darkgray";
+        document.getElementById( "F" ).style.color = "darkgray";
+        break;
+      case 8:
+        document.getElementById( "0" ).style.color = "black";
+        document.getElementById( "1" ).style.color = "black";
+        document.getElementById( "2" ).style.color = "black";
+        document.getElementById( "3" ).style.color = "black";
+        document.getElementById( "4" ).style.color = "black";
+        document.getElementById( "5" ).style.color = "black";
+        document.getElementById( "6" ).style.color = "black";
+        document.getElementById( "7" ).style.color = "black";
+        document.getElementById( "8" ).style.color = "darkgray";
+        document.getElementById( "9" ).style.color = "darkgray";
+        document.getElementById( "A" ).style.color = "darkgray";
+        document.getElementById( "B" ).style.color = "darkgray";
+        document.getElementById( "C" ).style.color = "darkgray";
+        document.getElementById( "D" ).style.color = "darkgray";
+        document.getElementById( "E" ).style.color = "darkgray";
+        document.getElementById( "F" ).style.color = "darkgray";
+        break;
+      case 2:
+        document.getElementById( "0" ).style.color = "black";
+        document.getElementById( "1" ).style.color = "black";
+        document.getElementById( "2" ).style.color = "darkgray";
+        document.getElementById( "3" ).style.color = "darkgray";
+        document.getElementById( "4" ).style.color = "darkgray";
+        document.getElementById( "5" ).style.color = "darkgray";
+        document.getElementById( "6" ).style.color = "darkgray";
+        document.getElementById( "7" ).style.color = "darkgray";
+        document.getElementById( "8" ).style.color = "darkgray";
+        document.getElementById( "9" ).style.color = "darkgray";
+        document.getElementById( "A" ).style.color = "darkgray";
+        document.getElementById( "B" ).style.color = "darkgray";
+        document.getElementById( "C" ).style.color = "darkgray";
+        document.getElementById( "D" ).style.color = "darkgray";
+        document.getElementById( "E" ).style.color = "darkgray";
+        document.getElementById( "F" ).style.color = "darkgray";
+        break;
+    }
+}
+
+function reable() {
+
+    switch (mode) {
+      case 16:
+        document.getElementById( "0" ).addEventListener("click", onClick);
+        document.getElementById( "1" ).addEventListener("click", onClick);
+        document.getElementById( "2" ).addEventListener("click", onClick);
+        document.getElementById( "3" ).addEventListener("click", onClick);
+        document.getElementById( "4" ).addEventListener("click", onClick);
+        document.getElementById( "5" ).addEventListener("click", onClick);
+        document.getElementById( "6" ).addEventListener("click", onClick);
+        document.getElementById( "7" ).addEventListener("click", onClick);
+        document.getElementById( "8" ).addEventListener("click", onClick);
+        document.getElementById( "9" ).addEventListener("click", onClick);
+        document.getElementById( "A" ).addEventListener("click", onClick);
+        document.getElementById( "B" ).addEventListener("click", onClick);
+        document.getElementById( "C" ).addEventListener("click", onClick);
+        document.getElementById( "D" ).addEventListener("click", onClick);
+        document.getElementById( "E" ).addEventListener("click", onClick);
+        document.getElementById( "F" ).addEventListener("click", onClick);
+        break;
+      case 10:
+        document.getElementById( "0" ).addEventListener("click", onClick);
+        document.getElementById( "1" ).addEventListener("click", onClick);
+        document.getElementById( "2" ).addEventListener("click", onClick);
+        document.getElementById( "3" ).addEventListener("click", onClick);
+        document.getElementById( "4" ).addEventListener("click", onClick);
+        document.getElementById( "5" ).addEventListener("click", onClick);
+        document.getElementById( "6" ).addEventListener("click", onClick);
+        document.getElementById( "7" ).addEventListener("click", onClick);
+        document.getElementById( "8" ).addEventListener("click", onClick);
+        document.getElementById( "9" ).addEventListener("click", onClick);
+        document.getElementById( "A" ).removeEventListener("click", onClick);
+        document.getElementById( "B" ).removeEventListener("click", onClick);
+        document.getElementById( "C" ).removeEventListener("click", onClick);
+        document.getElementById( "D" ).removeEventListener("click", onClick);
+        document.getElementById( "E" ).removeEventListener("click", onClick);
+        document.getElementById( "F" ).removeEventListener("click", onClick);
+        break;
+      case 8:
+        document.getElementById( "0" ).addEventListener("click", onClick);
+        document.getElementById( "1" ).addEventListener("click", onClick);
+        document.getElementById( "2" ).addEventListener("click", onClick);
+        document.getElementById( "3" ).addEventListener("click", onClick);
+        document.getElementById( "4" ).addEventListener("click", onClick);
+        document.getElementById( "5" ).addEventListener("click", onClick);
+        document.getElementById( "6" ).addEventListener("click", onClick);
+        document.getElementById( "7" ).addEventListener("click", onClick);
+        document.getElementById( "8" ).removeEventListener("click", onClick);
+        document.getElementById( "9" ).removeEventListener("click", onClick);
+        document.getElementById( "A" ).removeEventListener("click", onClick);
+        document.getElementById( "B" ).removeEventListener("click", onClick);
+        document.getElementById( "C" ).removeEventListener("click", onClick);
+        document.getElementById( "D" ).removeEventListener("click", onClick);
+        document.getElementById( "E" ).removeEventListener("click", onClick);
+        document.getElementById( "F" ).removeEventListener("click", onClick);
+        break;
+      case 2:
+        document.getElementById( "0" ).addEventListener("click", onClick);
+        document.getElementById( "1" ).addEventListener("click", onClick);
+        document.getElementById( "2" ).removeEventListener("click", onClick);
+        document.getElementById( "3" ).removeEventListener("click", onClick);
+        document.getElementById( "4" ).removeEventListener("click", onClick);
+        document.getElementById( "5" ).removeEventListener("click", onClick);
+        document.getElementById( "6" ).removeEventListener("click", onClick);
+        document.getElementById( "7" ).removeEventListener("click", onClick);
+        document.getElementById( "8" ).removeEventListener("click", onClick);
+        document.getElementById( "9" ).removeEventListener("click", onClick);
+        document.getElementById( "A" ).removeEventListener("click", onClick);
+        document.getElementById( "B" ).removeEventListener("click", onClick);
+        document.getElementById( "C" ).removeEventListener("click", onClick);
+        document.getElementById( "D" ).removeEventListener("click", onClick);
+        document.getElementById( "E" ).removeEventListener("click", onClick);
+        document.getElementById( "F" ).removeEventListener("click", onClick);
+        break;
+    }
+    recolor();
 }
 
 function start() {
@@ -160,29 +314,10 @@ function start() {
     document.getElementById( "clearAll" ).addEventListener("click", clear);
     document.getElementById( "back" ).addEventListener("click", goBack);
     document.getElementById( "/" ).addEventListener("click", operator);
-
-    document.getElementById( "A" ).addEventListener("click", onClick);
-    document.getElementById( "B" ).addEventListener("click", onClick);
-    document.getElementById( "7" ).addEventListener("click", onClick);
-    document.getElementById( "8" ).addEventListener("click", onClick);
-    document.getElementById( "9" ).addEventListener("click", onClick);
     document.getElementById( "*" ).addEventListener("click", operator);
-
-    document.getElementById( "C" ).addEventListener("click", onClick);
-    document.getElementById( "D" ).addEventListener("click", onClick);
-    document.getElementById( "4" ).addEventListener("click", onClick);
-    document.getElementById( "5" ).addEventListener("click", onClick);
-    document.getElementById( "6" ).addEventListener("click", onClick);
     document.getElementById( "-" ).addEventListener("click", operator);
-
-    document.getElementById( "E" ).addEventListener("click", onClick);
-    document.getElementById( "F" ).addEventListener("click", onClick);
-    document.getElementById( "1" ).addEventListener("click", onClick);
-    document.getElementById( "2" ).addEventListener("click", onClick);
-    document.getElementById( "3" ).addEventListener("click", onClick);
     document.getElementById( "+" ).addEventListener("click", operator);
-
     document.getElementById( "bar" ).addEventListener("click", negate);
-    document.getElementById( "0" ).addEventListener("click", onClick);
     document.getElementById( "=" ).addEventListener("click", answer);
+    reable();
 }
