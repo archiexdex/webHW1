@@ -2,7 +2,7 @@
 window.addEventListener( "load", start );
 
 let mode = 10;
-
+let NMax = 65536, NR = -32768, NL = 32767;
 
 
 function onClick(v) {
@@ -103,18 +103,27 @@ function change(v) {
 }
 
 function negate() {
-    let result = document.getElementById( "now" ).innerHTML;
-    document.getElementById( "now" ).innerHTML = -1 * result;
+    let now = document.getElementById( "now" ).innerHTML;
+    let base10 = parseInt( now, mode );
+    document.getElementById( "now" ).innerHTML = ( -1 * base10 ).toString(mode).toUpperCase();
     reload();
 }
 
 function reload() {
-    let num = document.getElementById( "now" ).innerHTML;
-    let base10 = parseInt( num, mode );
-    document.getElementById( "hexNow" ).innerHTML = base10.toString(16).toUpperCase();
-    document.getElementById( "decNow" ).innerHTML = base10
-    document.getElementById( "octNow" ).innerHTML = base10.toString(8);
-    document.getElementById( "binNow" ).innerHTML = base10.toString(2);
+    let now = document.getElementById( "now" ).innerHTML;
+    let base10 = parseInt( now, mode );
+    if ( base10 < 0 ) {
+        document.getElementById( "hexNow" ).innerHTML = ( NMax + base10 ).toString(16).toUpperCase();
+        document.getElementById( "decNow" ).innerHTML = base10
+        document.getElementById( "octNow" ).innerHTML = ( NMax + base10 ).toString(8);
+        document.getElementById( "binNow" ).innerHTML = ( NMax + base10 ).toString(2);
+    }
+    else {
+        document.getElementById( "hexNow" ).innerHTML = base10.toString(16).toUpperCase();
+        document.getElementById( "decNow" ).innerHTML = base10
+        document.getElementById( "octNow" ).innerHTML = base10.toString(8);
+        document.getElementById( "binNow" ).innerHTML = base10.toString(2);
+    }
 }
 
 function goBack(v) {
