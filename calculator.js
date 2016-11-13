@@ -1,5 +1,5 @@
 
-window.addEventListener( "load", start, false );
+window.addEventListener( "load", start );
 
 let mode = 10;
 
@@ -9,7 +9,6 @@ function onClick(v) {
     let tmp = v.path[0].id;
     let result = document.getElementById( "now" ).innerHTML;
     console.log(tmp);
-
 
     if ( 0 <= tmp && tmp <= 9 || ("A" <= tmp && tmp <= "F") ) {
         if ( result == 0 )
@@ -23,14 +22,33 @@ function onClick(v) {
 }
 
 function answer() {
+    let result = document.getElementById( "result" ).innerHTML;
+    let now = document.getElementById( "now" ).innerHTML;
+
+    result = result + now;
+    console.log(result);
+    document.getElementById( "now" ).innerHTML = eval(result);
+    document.getElementById( "result" ).innerHTML = "";
+    reload();
 }
 
 function operator(v) {
     let tmp = v.path[0].id;
     let result = document.getElementById( "result" ).innerHTML;
     let now = document.getElementById( "now" ).innerHTML;
+    switch (mode) {
+      case 16:
+        now = "0x" + now;
+        break;
+      case 8:
+        now = "0o" + now;
+        break;
+      case 2:
+        now = "0b" + now;
+        break;
+    }
     if ( !result || now != "0" ) {
-        document.getElementById( "result" ).innerHTML += document.getElementById( "now" ).innerHTML + " " + tmp + " ";
+        document.getElementById( "result" ).innerHTML += now + " " + tmp + " ";
         document.getElementById( "now" ).innerHTML = 0;
     }
     else {
@@ -64,7 +82,7 @@ function change(v) {
         mode = 8;
     else if( ptr == "bin" )
         mode = 2;
-    console.log("change mode" + mode);
+    console.log("change mode " + mode);
 }
 
 
@@ -72,7 +90,7 @@ function change(v) {
 
 function negate() {
     let result = document.getElementById( "now" ).innerHTML;
-    document.getElementById( "now" ).innerHTML = -result;
+    document.getElementById( "now" ).innerHTML = -1 * result;
     reload();
 }
 
@@ -133,7 +151,7 @@ function start() {
     document.getElementById( "7" ).addEventListener("click", onClick);
     document.getElementById( "8" ).addEventListener("click", onClick);
     document.getElementById( "9" ).addEventListener("click", onClick);
-    document.getElementById( "x" ).addEventListener("click", operator);
+    document.getElementById( "*" ).addEventListener("click", operator);
 
     document.getElementById( "C" ).addEventListener("click", onClick);
     document.getElementById( "D" ).addEventListener("click", onClick);
