@@ -48,12 +48,16 @@ body {
 
 .show_header {
   display: inline-block;
-  font-weight: bold;
+  font-weight: ;
   letter-spacing: 5px;
+  color: ;
 }
 
 .show_result {
   display: inline-block;
+  color: ;
+  font-weight: ;
+
 }
 
 
