@@ -63,6 +63,7 @@ function operator(v) {
         console.log("last operator " + ptr);
         document.getElementById( "result" ).innerHTML = result.substr(0,result.length-2) + tmp + " ";
     }
+    reload();
 }
 
 function change(v) {
