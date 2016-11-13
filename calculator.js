@@ -14,7 +14,12 @@ function onClick(v) {
         if ( result == 0 )
             document.getElementById( "now" ).innerHTML = tmp;
         else {
-            document.getElementById( "now" ).innerHTML += tmp;
+            let base10 = parseInt(result + tmp);
+            if ( base10 >= NMax )
+                base10 -= NMax;
+            if ( base10 > NL )
+                base10 = NL - base10;
+            document.getElementById( "now" ).innerHTML = base10.toString(mode);
         }
     }
 
