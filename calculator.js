@@ -25,9 +25,9 @@ function answer() {
     let result = document.getElementById( "result" ).innerHTML;
     let now = document.getElementById( "now" ).innerHTML;
 
-    result = result + now;
+    result = eval( result + now );
     console.log(result);
-    document.getElementById( "now" ).innerHTML = eval(result);
+    document.getElementById( "now" ).innerHTML = Math.floor(result) ;
     document.getElementById( "result" ).innerHTML = "";
     reload();
 }
