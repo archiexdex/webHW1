@@ -14,12 +14,12 @@ function onClick(v) {
         if ( result == 0 )
             document.getElementById( "now" ).innerHTML = tmp;
         else {
-            let base10 = parseInt(result + tmp);
+            let base10 = parseInt(result + tmp, mode);
             if ( base10 >= NMax )
                 base10 -= NMax;
             if ( base10 > NL )
                 base10 = NL - base10;
-            document.getElementById( "now" ).innerHTML = base10.toString(mode);
+            document.getElementById( "now" ).innerHTML = base10.toString(mode).toUpperCase();
         }
     }
 
