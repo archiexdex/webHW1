@@ -43,18 +43,19 @@ function operator(v) {
     let tmp = v.path[0].id;
     let result = document.getElementById( "result" ).innerHTML;
     let now = document.getElementById( "now" ).innerHTML;
-    switch (mode) {
-      case 16:
-        now = "0x" + now;
-        break;
-      case 8:
-        now = "0o" + now;
-        break;
-      case 2:
-        now = "0b" + now;
-        break;
-    }
+
     if ( !result || now != "0" ) {
+        switch (mode) {
+          case 16:
+            now = "0x" + now;
+            break;
+          case 8:
+            now = "0o" + now;
+            break;
+          case 2:
+            now = "0b" + now;
+            break;
+        }
         document.getElementById( "result" ).innerHTML += now + " " + tmp + " ";
         document.getElementById( "now" ).innerHTML = 0;
     }
